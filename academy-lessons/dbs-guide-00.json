@@ -14,7 +14,7 @@
       "dbs"
     ],
     "category": "workflow",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "snippets": [
     {
@@ -89,7 +89,7 @@
     },
     {
       "title": "Stock & Inventaire — Suivi, alertes, export et scan",
-      "content": "Le module **Stock** offre une visibilité totale sur l'état de l'entrepôt. L'utilisateur consulte les niveaux actuels, le seuil de sécurité et l'historique des mouvements dans l'onglet **Mouvements > Historique**. Les **Alertes de stock** s'affichent en rouge pour tout article franchissant son seuil. Le bouton **📊 Exporter inventaire** (page Stock principale) génère un fichier Excel (.xlsx) daté contenant : stock actuel, seuil critique, surplus ou rupture (stock - seuil), entrées en cours depuis les PO ouverts, stock projeté, valeur achat/vente, et détail fournisseur/client réservé. Pour le scan terrain : DBS accepte trois méthodes — **caméra** (appareil photo de la tablette ou du PC), **scanner USB/Bluetooth** (saisie Enter terminée), et **saisie manuelle**. La caméra nécessite que l'application soit servie en **HTTPS ou sur localhost** ; en accès LAN simple (`http://192.168.x.x`), la caméra se désactive automatiquement avec un message explicatif et les deux autres méthodes restent disponibles. Lors d'un scan, DBS reconnaît le **code-barres interne** et le **code fournisseur** de chaque article — les deux identifiants donnent le même résultat.",
+      "content": "Le module **Stock** offre une visibilité totale sur l'état de l'entrepôt. L'utilisateur consulte les niveaux actuels, le seuil de sécurité et l'historique des mouvements dans l'onglet **Mouvements > Historique**. Les **Alertes de stock** s'affichent en rouge pour tout article franchissant son seuil. La liste des articles comporte une colonne **Client** : le client pour lequel l'article est réservé (champ « Réservé au client » de l'import en masse) ; la colonne est triable et la recherche trouve aussi les articles par nom de client. Le bouton **📊 Exporter inventaire** (page Stock principale) génère un fichier Excel (.xlsx) daté contenant : stock actuel, seuil critique, surplus ou rupture (stock - seuil), entrées en cours depuis les PO ouverts, stock projeté, valeur achat/vente, et détail fournisseur/client réservé. Pour le scan terrain : DBS accepte trois méthodes — **caméra** (appareil photo de la tablette ou du PC), **scanner USB/Bluetooth** (saisie Enter terminée), et **saisie manuelle**. La caméra nécessite que l'application soit servie en **HTTPS ou sur localhost** ; en accès LAN simple (`http://192.168.x.x`), la caméra se désactive automatiquement avec un message explicatif et les deux autres méthodes restent disponibles. Lors d'un scan, DBS reconnaît le **code-barres interne** et le **code fournisseur** de chaque article — les deux identifiants donnent le même résultat.",
       "category": "workflow",
       "tags": [
         "stock",
@@ -97,12 +97,14 @@
         "mouvement",
         "alertestock",
         "codebarres",
-        "securite"
+        "securite",
+        "client",
+        "reserve"
       ]
     },
     {
       "title": "Articles — Catalogue produits, prix, codes et conditionnements",
-      "content": "Le catalogue central des produits se gère dans la section **Articles**. En cliquant sur **Créer un article**, l'utilisateur définit la désignation, le **Prix de vente** HT, le **Prix d'achat**, la **Famille** et les codes de référence. Quatre codes coexistent : **Code interne** (obligatoire, ex : VIS-5MM), **Code-barres** (EAN-13/Code-128 — si laissé vide, DBS génère un code `INT-XXX` à la première impression d'étiquette), **Code client** (référence du client) et **Code fournisseur** (référence sur les BL fournisseur, scannable). Lorsque le Code fournisseur est renseigné et que le Code-barres est vide, un bouton **→ Adopter** apparaît pour copier le code fournisseur comme code-barres interne en un clic. Les deux codes sont enregistrés séparément ; lors d'un scan en mouvement de stock ou en facturation, DBS reconnaît **l'un ou l'autre** automatiquement. En cas de changement de fournisseur sur un article existant, DBS affiche un rappel pour mettre à jour le code fournisseur. Pour les produits fabriqués en interne, l'onglet **Nomenclature (BOM)** calcule automatiquement le coût de revient théorique.",
+      "content": "Le catalogue central des produits se gère dans la section **Articles**. En cliquant sur **Créer un article**, l'utilisateur définit la désignation, le **Prix de vente** HT, le **Prix d'achat**, la **Famille** et les codes de référence. Quatre codes coexistent : **Code interne** (obligatoire, ex : VIS-5MM), **Code-barres** (EAN-13/Code-128 — si laissé vide, DBS génère un code `INT-XXX` à la première impression d'étiquette), **Code client** (référence du client) et **Code fournisseur** (référence sur les BL fournisseur, scannable). Lorsque le Code fournisseur est renseigné et que le Code-barres est vide, un bouton **→ Adopter** apparaît pour copier le code fournisseur comme code-barres interne en un clic. Les deux codes sont enregistrés séparément ; lors d'un scan en mouvement de stock ou en facturation, DBS reconnaît **l'un ou l'autre** automatiquement. En cas de changement de fournisseur sur un article existant, DBS affiche un rappel pour mettre à jour le code fournisseur. Pour les produits fabriqués en interne, l'onglet **Nomenclature (BOM)** calcule automatiquement le coût de revient théorique. Une fiche article reste entièrement modifiable tant qu'elle n'a pas de mouvements réels (le stock initial saisi à la création ne compte pas) ; dès qu'un historique existe, la classification et le SKU se verrouillent — un administrateur peut lever le verrou via le bouton **🔓 Déverrouiller** du bandeau d'avertissement. En mode SKU **🔓 Manuel**, le code saisi par l'admin est conservé tel quel. Les libellés de variantes V1/V2 d'une Famille se renomment à tout moment (bouton **✎ Renommer** sur la fiche article, ou Paramètres → Classification).",
       "category": "workflow",
       "tags": [
         "article",
@@ -111,7 +113,44 @@
         "nomenclature",
         "prix",
         "tva",
-        "famille"
+        "famille",
+        "verrouillage",
+        "deverrouiller",
+        "sku",
+        "variante"
+      ]
+    },
+    {
+      "title": "Supprimer ou désactiver un article — Zone de danger et champ Article actif",
+      "content": "Pour retirer un article des listes, deux mécanismes existent. **Désactiver** (cas général) : sur la fiche article, décochez la case **« Article actif »** puis enregistrez — l'article disparaît de la liste par défaut (filtre **Actifs**) mais reste consultable via le filtre **Inactifs**, et tout son historique (mouvements, factures, nomenclatures) est conservé ; il peut être réactivé à tout moment. **Supprimer définitivement** (article créé par erreur) : tout en bas de la fiche article, le panneau **« Zone de danger »** — visible uniquement par les administrateurs — propose **🗑️ Supprimer l'article**. La suppression exige de retaper le code de l'article puis le mot de passe de l'administrateur, et n'est possible que si l'article n'est référencé nulle part (aucun mouvement de stock, ligne de facture, bon de commande, nomenclature, lot ou conditionnement). Si l'article possède un historique, le panneau liste précisément ce qui le référence et la suppression est refusée — utilisez la désactivation à la place. Chaque suppression est tracée dans le journal d'audit.",
+      "category": "workflow",
+      "tags": [
+        "supprimer",
+        "suppression",
+        "desactiver",
+        "article",
+        "actif",
+        "zone",
+        "danger",
+        "mot",
+        "passe",
+        "erreur"
+      ]
+    },
+    {
+      "title": "Étiquettes — Format, nom ou code, et logo optionnel",
+      "content": "Le format des étiquettes se configure dans **Paramètres → Étiquettes** : taille (50×30, 60×40 ou 100×50 mm), affichage du **fournisseur** et du **client réservé** — pour chacun, choix entre le **nom** complet ou le **code** (utile quand le nom est long ou confidentiel) — et **logo optionnel** : aucun (défaut), logo de l'entreprise (celui des factures) ou logo dédié importé (PNG/JPEG, max 500 Ko, par exemple une version monochrome adaptée aux imprimantes thermiques). Ces réglages deviennent les valeurs par défaut de toutes les fenêtres d'impression d'étiquettes, et restent ajustables au moment de l'impression. Depuis la fiche article, le bouton **🏷️ Étiquette article** imprime une étiquette d'identification **sans date de réception** — valable en permanence pour les rayonnages et les bacs, contrairement aux étiquettes datées imprimées après chaque réception (rotation FIFO).",
+      "category": "workflow",
+      "tags": [
+        "etiquette",
+        "label",
+        "logo",
+        "code",
+        "nom",
+        "fournisseur",
+        "client",
+        "imprimer",
+        "format"
       ]
     },
     {
@@ -145,18 +184,17 @@
       ]
     },
     {
-      "title": "Ressources Humaines — Non disponible dans la version actuelle",
-      "content": "Le module **Ressources Humaines** (RH) n'est **pas disponible** dans la version actuelle de DBS. Il n'existe pas de menu RH, pas de fiches employés, pas de suivi de présence, pas de fiches de paie, et pas de gestion des congés dans l'application. Si un utilisateur cherche à gérer les salariés, les présences ou la paie dans DBS, il doit utiliser un outil externe. Ce module est prévu dans une version future mais n'a pas encore été développé. Ne pas orienter les utilisateurs vers un menu RH qui n'existe pas.",
+      "title": "Ressources Humaines — Personnel, présences et congés",
+      "content": "La gestion interne des ressources humaines s'effectue dans le menu **RH**. La section **Collaborateurs** répertorie l'ensemble des fiches employés avec leurs contrats, coordonnées, et leur numéro d'affiliation CNSS. L'onglet **Présence** permet d'enregistrer quotidiennement les heures de travail effectuées, les absences injustifiées et les heures supplémentaires effectuées par chaque salarié. Les fiches de paie et la synthèse de la masse salariale sont consolidées sous la vue **Fiches de paie**. Enfin, l'onglet **Congés** regroupe les **Demandes** d'absences, de congés annuels ou de maladies soumises par les employés pour approbation.",
       "category": "workflow",
       "tags": [
         "rh",
         "personnel",
         "collaborateur",
         "presence",
+        "heures-sup",
         "paie",
-        "conges",
-        "indisponible",
-        "limite"
+        "conges"
       ]
     },
     {
@@ -189,7 +227,7 @@
     },
     {
       "title": "Assistant IA & Academy — Interaction naturelle et extensions RAG",
-      "content": "L'**Assistant IA** est accessible sur toutes les pages via le widget de chat flottant en bas à droite de l'écran. Le raccourci `Ctrl + K` ouvre la **barre de recherche rapide** en haut de l'écran (pas le panneau de chat — le panneau s'ouvre uniquement via le bouton flottant). L'utilisateur peut y formuler une requête en langage naturel pour naviguer dans l'application ou extraire des données. L'onglet **DBS Academy** dans **Paramètres → Assistant IA** permet d'installer des leçons thématiques qui enrichissent la base de connaissances du système. Le **Tier d'IA** configuré (local, serveur ou cloud) détermine la puissance de traitement allouée.",
+      "content": "L'**Assistant IA** est accessible sur toutes les pages via le widget de chat flottant en bas à droite de l'écran ou en utilisant le raccourci clavier `Ctrl + K`. L'utilisateur peut y formuler une requête en langage naturel pour naviguer dans l'application ou extraire des données. L'onglet **DBS Academy** permet d'étendre les connaissances réglementaires et d'affaires du système grâce à la section **Mises à jour et Extensions**, où l'on peut installer de nouvelles leçons thématiques en téléchargeant des packages de connaissances vectorielles. Le **Tier d'IA** configuré dans les paramètres (local, serveur ou cloud) détermine la puissance de traitement allouée pour répondre aux questions.",
       "category": "workflow",
       "tags": [
         "assistant",
@@ -203,7 +241,7 @@
     },
     {
       "title": "Fonctionnalités non disponibles dans DBS — Limites de la version actuelle",
-      "content": "Pour éviter toute confusion opérationnelle, certaines fonctionnalités ne sont pas prises en charge dans la version actuelle de DBS. **Ressources Humaines** : pas de module RH, pas de fiches employés, pas de paie, pas de gestion des congés — utiliser un outil externe. **Multi-devises** : toutes les transactions sont exclusivement en Dinars Tunisiens (TND). **Application mobile native** : l'accès sur tablette se fait via un navigateur web responsive (pas d'app iOS/Android). **Intégration email** : pas de serveur SMTP intégré — l'envoi de factures par email nécessite un client mail externe. **Rapprochement bancaire automatique** : pas d'import de relevés MT940 ni d'API bancaires tunisiennes. **Multi-entrepôts** : un seul entrepôt par installation (les emplacements permettent de subdiviser l'espace interne).",
+      "content": "Pour éviter toute confusion opérationnelle, certaines fonctionnalités avancées ne sont pas prises en charge dans la version actuelle de DBS. Le **multi-devises transactionnel** n'est pas supporté : toutes les transactions, factures et valorisations de stock sont traitées en Dinars Tunisiens (TND) — une devise d'affichage (EUR, USD, GBP) peut être sélectionnée dans les Paramètres mais elle ne concerne que les indicateurs du tableau de bord, sans taux de change appliqué aux documents. Il n'existe pas d'application mobile ERP complète : l'utilisation complète sur tablette passe par le navigateur (ou le raccourci PWA) ; l'application compagnon **DBS Pager** (Android) couvre uniquement les alertes, le suivi de documents, les approbations de bons de commande, les KPI et la recherche d'article par scan. L'import de relevés bancaires aux formats **MT940** ou via API bancaire directe n'est pas disponible — le rapprochement bancaire fonctionne par import CSV manuel. Enfin, la **signature électronique XAdES** des factures TEIF n'est pas incluse (le XML TEIF est généré sans signature cryptographique).",
       "category": "workflow",
       "tags": [
         "limite",
@@ -211,8 +249,9 @@
         "manquant",
         "multidevises",
         "mobile",
-        "rapprochement",
-        "email"
+        "mt940",
+        "xades",
+        "teif"
       ]
     }
   ]

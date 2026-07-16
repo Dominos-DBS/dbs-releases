@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "packageSource": "cabling-pack-1",
+    "name": "Extension Câblage & Automobile",
+    "description": "Base étendue de fiches sur les procédés de coupe de fils, le sertissage automatique Komax et les tests électriques de faisceaux.",
+    "tags": ["automobile", "câblage", "Komax"]
+  },
+  "snippets": [
+    {
+      "category": "workflow",
+      "title": "Câblage : Réglage de sertissage Komax",
+      "content": "Le sertissage de terminaux sur fil automobile exige un ajustement micrométrique de la hauteur de sertissage. DBS enregistre les fiches techniques des machines Komax avec la hauteur cible pour chaque section de fil (en mm²). Tout écart de sertissage entraîne l'arrêt immédiat de la ligne pour contrôle de traction.",
+      "tags": ["câblage", "sertissage", "Komax"]
+    },
+    {
+      "category": "compliance",
+      "title": "Câblage : Norme automobile IATF 16949",
+      "content": "La norme IATF 16949 régit les exigences qualité des équipementiers automobiles en Tunisie. Elle impose une gestion rigoureuse des modifications de processus (FMEA) et une traçabilité unitaire de chaque faisceau électrique produit. DBS consigne les tests électriques et les numéros de lots de composants.",
+      "tags": ["automobile", "qualité", "normes"]
+    }
+  ]
+}
