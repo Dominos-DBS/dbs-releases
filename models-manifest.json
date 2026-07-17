@@ -38,5 +38,16 @@
     "min_ram_gb": 4,
     "recommended": false,
     "tags": ["ultra-léger", "microsoft", "rapide"]
+  },
+  {
+    "id": "bge-m3",
+    "role": "embedding",
+    "name": "Recherche sémantique (bge-m3)",
+    "description": "Moteur de recherche sémantique multilingue (français/arabe/anglais). Permet à l'assistant de retrouver vos fiches, leçons et documents par le sens, pas seulement par mots-clés. À installer une fois pour activer la recherche intelligente et les suggestions de l'assistant.",
+    "recommendation": "Requis pour la recherche intelligente de l'assistant",
+    "size_gb": 1.2,
+    "min_ram_gb": 4,
+    "recommended": true,
+    "tags": ["recherche-sémantique", "multilingue", "français", "arabe", "moteur-ia"]
   }
 ]
