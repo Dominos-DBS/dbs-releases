@@ -14,7 +14,7 @@
       "dbs"
     ],
     "category": "workflow",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "snippets": [
     {
@@ -237,6 +237,36 @@
         "lecon",
         "question",
         "extension"
+      ]
+    },
+    {
+      "title": "Authentification à deux facteurs (2FA) — Sécuriser son compte",
+      "content": "Chaque utilisateur peut activer une **authentification à deux facteurs** sur son propre compte depuis **Paramètres compte** (ou la page **Mot de passe**), section **Authentification à deux facteurs**. Le processus : cliquer **Activer la 2FA**, scanner le QR code affiché avec une application comme Google Authenticator ou Authy (ou saisir la clé manuelle affichée en dessous), puis entrer le code à 6 chiffres généré pour confirmer — la 2FA ne s'active qu'après cette confirmation. Une fois activée, chaque connexion demande le mot de passe puis un code à 6 chiffres. Pour désactiver, retour au même écran une fois connecté. En cas de perte du téléphone, un administrateur ayant la permission de gestion des utilisateurs peut désactiver la 2FA d'un collègue depuis sa fiche utilisateur. C'est une fonctionnalité optionnelle, par utilisateur — elle n'affecte pas les autres comptes.",
+      "category": "workflow",
+      "tags": [
+        "2fa",
+        "authentification",
+        "securite",
+        "totp",
+        "qrcode",
+        "compte",
+        "mot de passe"
+      ]
+    },
+    {
+      "title": "Panneau À propos, Conditions d'utilisation et sécurité disque",
+      "content": "En bas de la barre latérale, sous le numéro de version installée, un petit panneau affiche en permanence : un lien **email** pour contacter DBS, un lien **site web**, un lien **Avis** pour noter et commenter DBS sur le site, et le **numéro de licence** (ou « Version d'essai »). Le texte intégral des **Conditions d'utilisation** (CGU/CGV) en vigueur reste consultable à tout moment dans **Paramètres → Conditions d'utilisation**, avec la version acceptée et sa date ; si les conditions changent, un bandeau discret et non bloquant apparaît en haut de l'application avec un lien vers cette page. Par ailleurs, **Paramètres → Sécurité** affiche un avis indiquant si le disque de l'ordinateur est chiffré (BitLocker / Chiffrement de l'appareil) — honnêtement affiché comme Chiffré, Non chiffré, ou Indéterminé quand DBS ne peut pas vérifier sans droits administrateur.",
+      "category": "workflow",
+      "tags": [
+        "a propos",
+        "conditions",
+        "cgu",
+        "cgv",
+        "licence",
+        "avis",
+        "securite",
+        "chiffrement",
+        "bitlocker"
       ]
     },
     {
