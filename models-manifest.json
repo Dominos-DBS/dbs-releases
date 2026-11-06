@@ -1,19 +1,9 @@
 [
   {
-    "id": "qwen2.5:3b",
-    "name": "Qwen 2.5 · 3B",
-    "description": "Modèle compact multilingue (français/arabe/anglais). Idéal pour les machines 8 Go RAM. Excellent rapport qualité/taille pour DBS.",
-    "recommendation": "Recommandé pour machines 8–15 Go RAM",
-    "size_gb": 2.0,
-    "min_ram_gb": 6,
-    "recommended": true,
-    "tags": ["multilingue", "compact", "français", "arabe"]
-  },
-  {
     "id": "llama3.2:3b",
     "name": "Llama 3.2 · 3B",
-    "description": "Modèle léger de Meta, fort en français et en raisonnement. Bonne alternative si Qwen n'est pas disponible.",
-    "recommendation": "Bonne alternative pour 8 Go RAM",
+    "description": "Modèle léger de Meta, fort en français et en raisonnement. Adapté aux machines 8 Go RAM.",
+    "recommendation": "Pour machines 8 Go RAM",
     "size_gb": 2.0,
     "min_ram_gb": 6,
     "recommended": false,
