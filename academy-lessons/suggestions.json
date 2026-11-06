@@ -16,7 +16,7 @@
   "snippets": [
     {
       "title": "Saisie rapide de commandes via l'Assistant IA — Rédaction de bons de commande",
-      "content": "Pour gagner du temps lors des approvisionnements, vous pouvez exprimer votre besoin en langage naturel dans l'Assistant IA. En saisissant par exemple « Rédige une commande pour Latco de 10 cartons de tissu », l'assistant extrait automatiquement le tiers, les articles et les quantités requis. Il affiche ensuite une fiche de validation interactive vous permettant de générer instantanément le Bon de Commande (PO) sans naviguer manuellement dans les menus.",
+      "content": "Pour gagner du temps lors des approvisionnements, vous pouvez exprimer votre besoin en langage naturel dans l'Assistant IA. En saisissant par exemple « Rédige une commande de 10 cartons de tissu pour mon fournisseur habituel », l'assistant extrait automatiquement le tiers, les articles et les quantités requis. Il affiche ensuite une fiche de validation interactive vous permettant de générer instantanément le Bon de Commande (PO) sans naviguer manuellement dans les menus.",
       "category": "workflow",
       "tags": [
         "assistant",
