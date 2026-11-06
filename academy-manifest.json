@@ -225,8 +225,8 @@
     "id": "dbs-guide-00",
     "name": "DBS Guide Utilisateur — Navigation & Fonctionnalités",
     "description": "Réponses aux questions de navigation et d'utilisation de DBS : où trouver chaque fonction, comment effectuer les opérations courantes, et liste des fonctionnalités non encore disponibles.",
-    "snippetCount": 18,
-    "fileSizeBytes": 22654,
+    "snippetCount": 23,
+    "fileSizeBytes": 31591,
     "filePath": "https://raw.githubusercontent.com/Dominos-DBS/dbs-releases/main/academy-lessons/dbs-guide-00.json",
     "tags": [
       "guide",
@@ -682,7 +682,7 @@
     "name": "Astuces et Suggestions de l'Assistant",
     "description": "Conseils d'utilisation avancés et exemples de requêtes interactives pour exploiter au mieux DBS ERP.",
     "snippetCount": 6,
-    "fileSizeBytes": 4967,
+    "fileSizeBytes": 4986,
     "filePath": "https://raw.githubusercontent.com/Dominos-DBS/dbs-releases/main/academy-lessons/suggestions.json",
     "tags": [
       "astuces",
